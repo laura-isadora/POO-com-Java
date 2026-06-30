@@ -7,7 +7,7 @@ public class Bolsista extends Aluno {
         System.out.println("Renovando bolsa de "+ this.nome);
     }
 
-    @Override //mesmo método de Aluno, mas sobreposto
+    @Override //mesmo método de Aluno, mas sobreposto (polimorfismo de sobreposição)
     public void pagarMensalidade(){
         System.out.println(this.nome + " é bolsista. Pagamento facilitado.");
     }
