@@ -1,9 +1,9 @@
 package aula11;
 
 public abstract class Pessoa {
-    private String nome;
-    private int idade;
-    private String sexo;
+    protected String nome;
+    protected int idade;
+    protected String sexo;
 
     public void fazerAniver(){
         this.idade++;
@@ -33,8 +33,9 @@ public abstract class Pessoa {
         this.sexo = sexo;
     }
 
-    
+    @Override
     public String toString() {
         return "Pessoa [nome=" + nome + ", idade=" + idade + ", sexo=" + sexo + "]";
     }
+
 }
