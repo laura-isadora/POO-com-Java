@@ -12,6 +12,7 @@ public class Luta {
 
     //métodos
     public void marcarLuta(Lutador l1, Lutador l2){
+        //os lutadores tem que ser da mesma categoria e um lutador não pode desafiar a si mesmo
         if (l1.getCategoria().equals(l2.getCategoria()) && l1 != l2){
             this.aprovada = true;
             this.desafiado = l1;
@@ -27,6 +28,7 @@ public class Luta {
         if (this.aprovada){
             this.desafiado.apresentar();
             this.desafiante.apresentar();
+            System.out.println("============= RESULTADO DA LUTA ============");
 
             Random aleatorio = new Random();
             int vencedor = aleatorio.nextInt(3); //0 1 2 
@@ -42,8 +44,12 @@ public class Luta {
                 this.desafiante.perderLuta();
                     break;
                 case 2: //desafiante vence
+                System.out.println(getDesafiante() +" venceu!!!");
+                this.desafiante.ganharLuta();
+                this.desafiado.perderLuta();
                     break;
             }
+            System.out.println("===========================================");
         }else {
             System.out.println("A luta não pode acontecer!");
         }
