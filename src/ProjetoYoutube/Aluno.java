@@ -28,7 +28,7 @@ public class Aluno extends Pessoa {
 
     @Override
     public String toString() {
-        return "Aluno [" + super.toString() + "\nlogin=" + login + ", totAssistido=" + totAssistido + "]";
-    }
+        return "Aluno " + super.toString() + "\n login = " + login + ", totAssistido = " + totAssistido;
+    }//chamada ao método da superclasse
 
 }
