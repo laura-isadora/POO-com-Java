@@ -2,6 +2,7 @@ package Livraria.service;
 
 import Livraria.models.Emprestimo;
 import Livraria.models.Livro;
+import Livraria.models.Pessoa;
 
 public class LivroService implements ILivroService {
 
@@ -16,10 +17,10 @@ public class LivroService implements ILivroService {
     }
 
     @Override
-    public void emprestarLivro(Livro livro, Emprestimo emprestimo) {//tentar imprimir mensagem diretamente no main depois
+    public void emprestarLivro(Livro livro, Pessoa leitor) {//tentar imprimir mensagem diretamente no main depois
         if (disponivel(livro)) {// se o livro estiver disponivel diminui a quantidade
             livro.setQuantidade(livro.getQuantidade()-1);
-            emprestimo.setLivro(livro);
+            Emprestimo emprestimo = new Emprestimo(leitor, livro);
             System.out.println("Livro emprestado com sucesso.");
         }else{
             System.out.println("Não há cópias desse livro.");
